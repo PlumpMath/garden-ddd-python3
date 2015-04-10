@@ -6,7 +6,7 @@ class AssimpObjLoader(object):
         # super(AssimpObjLoader, **kwargs)
         # source = kwargs.get('source', '')
         if not source:
-            print("no source given!")
+            print "no source given!"
             return
 
         self.scene = scene = load(
@@ -36,7 +36,7 @@ class AssimpMesh(object):
 
         self.vertices = []
         self.indices = []
-        self.texture = mesh.material.properties.get(('file', 1))
+        self.texture = mesh.material.properties.get(('file', 1L))
 
         ambiant = [0.0, 0.0, 0.0]
         diffuse = [1.0, 1.0, 1.0]
@@ -47,11 +47,11 @@ class AssimpMesh(object):
                 list(v) + list(mesh.normals[i]) +
                 list(mesh.texturecoords[0][i][:2]
                      if len(mesh.texturecoords) else [0, 0]) +
-                mesh.material.properties.get(('ambiant', 0), ambiant) +
-                mesh.material.properties.get(('diffuse', 0), diffuse) +
-                mesh.material.properties.get(('specular', 0), specular) + [
-                    mesh.material.properties.get(('refracti', 0), 1),
-                    mesh.material.properties.get(('opacity', 0), 1)
+                mesh.material.properties.get(('ambiant', 0L), ambiant) +
+                mesh.material.properties.get(('diffuse', 0L), diffuse) +
+                mesh.material.properties.get(('specular', 0L), specular) + [
+                    mesh.material.properties.get(('refracti', 0L), 1),
+                    mesh.material.properties.get(('opacity', 0L), 1)
                 ]
             )
 

@@ -1,4 +1,4 @@
-from .object_renderer import ObjectRenderer
+from object_renderer import ObjectRenderer
 
 from kivy.core.window import Window  # noqa
 from kivy.lang import Builder
@@ -120,7 +120,7 @@ class BaseView(ObjectRenderer):
             self.light_sources[i] = [
                 cos(a) * self.light_radius, 5, sin(a) * self.light_radius, 1.0]
 
-        for k in list(self.light_sources.keys()):
+        for k in self.light_sources.keys():
             if k >= self.nb_lights:
                 del(self.light_sources[k])
 

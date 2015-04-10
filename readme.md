@@ -1,6 +1,10 @@
 kivy.ddd
 ========
 
+Changes in python3 version
+* (2015-04-10) changed vertex_format tuples from string,int,string to bytestring,int,string
+* (2015-04-10) Ran 2to3.py
+
 ddd is a set of widgets and tools to display 3d meshes in a kivy
 program. It can load simple .obj+mtl files on its own, but deffer to the
 assimp lib to do the heavy work of loading numerous formats and fixing
